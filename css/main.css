@@ -63,7 +63,6 @@
   align-items: center;
 }
 
-
 /* ------------------------------- modal ------------------------------------- */
 
 .modal {
@@ -83,7 +82,7 @@
   display: block;
 }
 
-.modal.open .modal__container_section{
+.modal.open .modal__container_section {
   display: block;
   -webkit-animation: fadeInFromNone 1s ease-out;
   -moz-animation: fadeInFromNone 1s ease-out;
@@ -178,6 +177,203 @@
   text-align: right;
   display: block;
   cursor: pointer;
+}
+
+/* -------------------- tooltip ---------------------------*/
+
+button.tooltip {
+  background: #0095da;
+  padding: 10px;
+  color: white;
+  border: none;
+  font-size: 16px;
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip .tooltip__text {
+  visibility: hidden;
+  width: 228px;
+  color: #fff;
+  text-align: left;
+  border-radius: 3px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  color: #333333;
+  top: 50px;
+  right: calc((100% - 228px)/2);
+  -webkit-box-shadow: -1px 1px 5px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: -1px 1px 5px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: -1px 1px 5px 3px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 8px;
+  background-color: white;
+  text-align: center;
+  word-break: break-word;
+  font-weight: normal;
+  height: auto;
+}
+
+.tooltip .tooltip__text:after {
+  content: "";
+  position: absolute;
+  border-top: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  border-left: 10px solid transparent;
+  top: -20px;
+  left: calc((100% - 20px) / 2);
+}
+
+.tooltip.top .tooltip__text {
+  top: unset;
+  bottom: 50px;
+}
+
+.tooltip.left .tooltip__text {
+  top: unset;
+  bottom: unset;
+  left: unset;
+  right: 120px;
+  transform: translateY(-55%);
+  box-sizing: border-box;
+}
+
+.tooltip.right .tooltip__text {
+  top: unset;
+  bottom: unset;
+  right: unset;
+  left: 120px;
+  transform: translateY(-55%);
+  box-sizing: border-box;
+}
+
+.tooltip.top .tooltip__text:after {
+  border-top: 10px solid white;
+  border-bottom: 10px solid transparent;
+  bottom: -20px;
+  top: unset;
+}
+
+.tooltip.left .tooltip__text:after {
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid white;
+  bottom: calc((100% - 20px)/2);
+  top: unset;
+  left: unset;
+  right: -20px;
+}
+
+.tooltip.right .tooltip__text:after {
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid white;
+  bottom: calc((100% - 20px)/2);
+  top: unset;
+  left: unset;
+  left: -20px;
+}
+
+.tooltip:hover .tooltip__text {
+  visibility: visible;
+}
+
+/* -------------------- input animations --------------------------- */
+
+.group { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+input {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:calc(100% - 15px);
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus { 
+  outline:none; 
+}
+
+label {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+input:focus ~ label, input:valid ~ label {
+  top:-10px;
+  font-size:14px;
+  color:#0095da;
+}
+
+.bar {
+ position:relative;
+ display:block;
+ width:100%;
+}
+.bar:before, .bar:after {
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:0px; 
+  position:absolute;
+  background:#0095da; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+.bar:before {
+  left:50%;
+}
+
+.bar:after {
+  right:50%; 
+}
+
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
+}
+
+@-moz-keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
+}
+
+@keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
 }
 
 @media only screen and (max-width: 500px) {
