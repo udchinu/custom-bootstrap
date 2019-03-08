@@ -1,8 +1,10 @@
 /*------------------------------------ grid system -------------------------------*/
+
 .container {
   max-width: 1180px;
   margin: 0 auto;
 }
+
 .gridlist {
   width: 100%;
   display: flex;
@@ -57,6 +59,11 @@
   width: 100%;
 }
 
+.align__middle {
+  align-items: center;
+}
+
+
 /* ------------------------------- modal ------------------------------------- */
 
 .modal {
@@ -74,6 +81,74 @@
 
 .modal.open {
   display: block;
+}
+
+.modal.open .modal__container_section{
+  display: block;
+  -webkit-animation: fadeInFromNone 1s ease-out;
+  -moz-animation: fadeInFromNone 1s ease-out;
+  -o-animation: fadeInFromNone 1s ease-out;
+  animation: fadeInFromNone 1s ease-out;
+}
+
+@-webkit-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
 }
 
 .modal .modal__continer {
@@ -99,6 +174,11 @@
   padding: 10px;
 }
 
+.close__model {
+  text-align: right;
+  display: block;
+  cursor: pointer;
+}
 
 @media only screen and (max-width: 500px) {
   .gridlist .gridlist__col_md_1,
