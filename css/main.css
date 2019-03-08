@@ -9,50 +9,68 @@
   flex-flow: row wrap;
 }
 
-.gridlist .gridlist__col_md_1{
+.gridlist .gridlist__col_md_1 {
   width: 8.333%;
 }
 
-.gridlist .gridlist__col_md_2{
+.gridlist .gridlist__col_md_2 {
   width: 16.666%;
 }
 
-.gridlist .gridlist__col_md_3{
+.gridlist .gridlist__col_md_3 {
   width: 25%;
 }
 
-.gridlist .gridlist__col_md_4{
+.gridlist .gridlist__col_md_4 {
   width: 33.33%;
 }
 
-.gridlist .gridlist__col_md_5{
+.gridlist .gridlist__col_md_5 {
   width: 41.6666%;
 }
 
-.gridlist .gridlist__col_md_6{
+.gridlist .gridlist__col_md_6 {
   width: 50%;
 }
 
-.gridlist .gridlist__col_md_7{
+.gridlist .gridlist__col_md_7 {
   width: 58.333%;
 }
 
-.gridlist .gridlist__col_md_8{
+.gridlist .gridlist__col_md_8 {
   width: 66.666%;
 }
 
-.gridlist .gridlist__col_md_9{
+.gridlist .gridlist__col_md_9 {
   width: 75%;
 }
 
-.gridlist .gridlist__col_md_10{
+.gridlist .gridlist__col_md_10 {
   width: 83.333%;
 }
 
-.gridlist .gridlist__col_md_11{
+.gridlist .gridlist__col_md_11 {
   width: 91.666%;
 }
 
-.gridlist .gridlist__col_md_12{
+.gridlist .gridlist__col_md_12 {
   width: 100%;
+}
+
+
+@media only screen and (max-width: 500px) {
+  .gridlist .gridlist__col_md_1,
+  .gridlist .gridlist__col_md_2,
+  .gridlist .gridlist__col_md_3,
+  .gridlist .gridlist__col_md_4,
+  .gridlist .gridlist__col_md_5,
+  .gridlist .gridlist__col_md_6,
+  .gridlist .gridlist__col_md_7,
+  .gridlist .gridlist__col_md_8,
+  .gridlist .gridlist__col_md_9,
+  .gridlist .gridlist__col_md_10,
+  .gridlist .gridlist__col_md_11,
+  .gridlist .gridlist__col_md_12 {
+    width: 100%;
+  }
 }
