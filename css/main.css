@@ -1,0 +1,58 @@
+/*------------------------------------ grid system -------------------------------*/
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.gridlist {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.gridlist .gridlist__col_md_1{
+  width: 8.333%;
+}
+
+.gridlist .gridlist__col_md_2{
+  width: 16.666%;
+}
+
+.gridlist .gridlist__col_md_3{
+  width: 25%;
+}
+
+.gridlist .gridlist__col_md_4{
+  width: 33.33%;
+}
+
+.gridlist .gridlist__col_md_5{
+  width: 41.6666%;
+}
+
+.gridlist .gridlist__col_md_6{
+  width: 50%;
+}
+
+.gridlist .gridlist__col_md_7{
+  width: 58.333%;
+}
+
+.gridlist .gridlist__col_md_8{
+  width: 66.666%;
+}
+
+.gridlist .gridlist__col_md_9{
+  width: 75%;
+}
+
+.gridlist .gridlist__col_md_10{
+  width: 83.333%;
+}
+
+.gridlist .gridlist__col_md_11{
+  width: 91.666%;
+}
+
+.gridlist .gridlist__col_md_12{
+  width: 100%;
+}
