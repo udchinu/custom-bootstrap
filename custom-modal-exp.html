@@ -2,8 +2,25 @@
 <html>
 <head>
   <title>custom-modal-example</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
+<style>
+  button {
+    padding: 10px;
+    color: white;
+    background: #0095da;
+    font-size: 16px;
+    outline: none;
+  }
+</style>
 <body>
-  <div class=""
+  <div class="button__wrapper">
+    <button name="modal" data-target="custom-modal">open modal</button>
+  </div>
+  <div class="modal" id="custom-modal">
+    <div class="modal__continer">
+    </div>
+  </div>
 </body>
+<script type="text/javascript" src="js/main.js"></script>
 </html>
