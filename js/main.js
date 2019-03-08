@@ -8,8 +8,11 @@ function init () {
 
 function attechEvtListnerOnModal () {
   var ele = document.getElementsByName('modal')
-  ele[0].addEventListener('click', function (ele) {
-    var modalEle = ele.currentTarget.dataset.target
-    document.getElementById(modalEle).classList.add('open')
-  })
+  for (var i = 0; i < ele.length; i++) {
+    ele[i].addEventListener('click', function (ele) {
+      debugger
+      var modalEle = ele.currentTarget.dataset.target
+      document.getElementById(modalEle).classList.add('open')
+    })
+  }
 }

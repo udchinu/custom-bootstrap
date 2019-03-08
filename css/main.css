@@ -57,6 +57,8 @@
   width: 100%;
 }
 
+/* ------------------------------- modal ------------------------------------- */
+
 .modal {
   position: fixed;
   z-index: 1000000;
@@ -72,6 +74,29 @@
 
 .modal.open {
   display: block;
+}
+
+.modal .modal__continer {
+  position: relative;
+}
+
+.modal__container_section {
+  width: 600px;
+  background: white;
+  position: absolute;
+  top: 150px;
+  border-radius: 5px;
+  left: calc((100% - 500px)/2);
+}
+
+.modal__container_section_heading,
+.modal__container_section_body {
+  padding: 10px;
+  border-bottom: 1px solid silver;
+}
+
+.modal__container_section_footer {
+  padding: 10px;
 }
 
 
