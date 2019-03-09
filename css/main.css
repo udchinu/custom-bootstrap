@@ -113,6 +113,19 @@
   display: block;
 }
 
+.modal.open .close__model {
+  -webkit-animation: rotation 0.8s  linear;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(180deg);
+  }
+}
+
 .modal.open .modal__container_section {
   display: block;
   -webkit-animation: fadeInFromNone 1s ease-out;
@@ -208,6 +221,12 @@
   text-align: right;
   display: block;
   cursor: pointer;
+  width: 10px;
+  font-weight: 600;
+}
+.animated__close {
+  display: flex;
+  justify-content: flex-end;
 }
 
 

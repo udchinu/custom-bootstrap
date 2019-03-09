@@ -69,10 +69,23 @@ function selectOptionHandler(selectOptionHandler, evt) {
 
 function attachEventListnerOnLoad () {
   var slides = document.getElementsByClassName("mySlides");
+  if (!slides.length) return;
   slides[0].style.display = "block";
   let automaticSlide = document.getElementById('custom-carousel').dataset.automaticCarousel
   if (automaticSlide === 'true') {
     setInfiniteInterval()
+  }
+  for (var i = 0; i < slides.length; i++) {
+    var span = document.createElement('span')
+    span.setAttribute('class', 'dot')
+    span.setAttribute('data-target', 'carousel')
+    span.setAttribute('data-href', 'custom-carousel')
+    span.setAttribute('data-dot', i)
+    span.setAttribute('class', 'dot')
+    if (i === 0) {
+      span.classList.add('active')
+    }
+    document.getElementsByClassName('carousel_dot')[0].appendChild(span)
   }
 }
 
