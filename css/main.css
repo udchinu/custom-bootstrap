@@ -1,0 +1,55 @@
+.tabs {
+    position: fixed;
+    left: 30px;
+    top: 60px;
+    bottom: 100px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.tabs.active {
+    color: black;
+    display: block;
+    font-size: initial;
+}
+
+button.active {
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 1px solid grey;
+    border-radius: 6px;
+    background-color: #0095da;
+    outline: none;
+}
+
+button.active:hover {
+    background-color: #0095da;
+}
+
+button{
+    color: #0096d9;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border:none;
+    border-radius: 2px;
+}
+
+button:hover{
+    background-color: #dddddd;
+    border-radius: 6px;
+}
+
+
