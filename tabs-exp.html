@@ -1,0 +1,91 @@
+<!-- for using tabs :-
+ class of every element should be same and data-target. data-href can be anything but should match with id of the tab data
+ -->
+
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js"></script>
+  </head>
+  <body>
+  <div class="tabs__wrapper">
+    <button class="btn btn__blue active"
+            data-target="tabs"
+            data-href="first-tab">Tab1
+    </button>
+
+
+    <button class="btn"
+            data-target="tabs"
+            data-href="second-tab">Tab2
+    </button>
+
+    <button class="btn"
+            data-target="tabs"
+            data-href="third-tab">Tab3
+    </button>
+
+    <button class="btn"
+            data-target="tabs"
+            data-href="fourth-tab">Tab4
+    </button>
+  </div>
+
+  <div class="tabs__data_wrapper">
+    <div class="tabs__section active" id="first-tab" style="
+            left: 30px;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            top: 20px;
+            background-color: green;"
+    >
+      <h3>Notes is a notetaking app developed by Apple.
+        It is provided on their iOS and macOS operating systems,
+        the latter starting with OS X 10.8 Mountain Lion
+      </h3>
+    </div>
+
+    <div class="tabs__section" id="second-tab" style="
+                  left: 30px;
+                  right: 0;
+                  width: 100%;
+                  height: 100%;
+                  top: 100px;
+                  background-color:deepskyblue;"
+    >
+      <h3>Safari is a graphical web browser developed by Apple,
+        based on the WebKit engine
+      </h3>
+    </div>
+
+    <div class="tabs__section" id="third-tab" style="
+              left: 30px;
+              right: 0;
+              width: 100%;
+              height: 100%;
+              top: 200px;
+              background-color: blueviolet;"
+    >
+      <h3>Slack is an American cloud-based set of proprietary team collaboration tools and services,
+        founded by Stewart Butterfield
+      </h3>
+    </div>
+
+    <div class="tabs__section" id="fourth-tab" style="
+                  left: 30px;
+                  right: 0;
+                  width: 100%;
+                  height: 100%;
+                  top: 300px;
+                  background-color: chocolate;"
+    >
+      <h3>Sublime Text is a proprietary cross-platform source code
+        editor with a Python application programming interface.
+      </h3>
+    </div>
+
+  </div>
+
+  </body>
+</html>
