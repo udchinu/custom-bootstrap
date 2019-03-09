@@ -36,3 +36,8 @@ function removeAddActive (parentEle) {
     }
 }
 
+function modalHandler (targetEle) {
+  let ele = document.getElementById(targetEle)
+  ele.classList.contains('open') ? ele.classList.remove('open') : ele.classList.add('open')
+}
+
