@@ -27,8 +27,8 @@ function tabsHandler(targetEle, evt) {
     evt.target.classList.add('active')
     removeAddActive(evt.target.parentElement.nextElementSibling)
     let ele = document.getElementById(targetEle)
+    ele.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
     ele.classList.add('active')
-
 }
 function removeAddActive (parentEle) {
     for (var i = 0; i < parentEle.children.length; i++) {

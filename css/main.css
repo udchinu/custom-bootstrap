@@ -1,14 +1,9 @@
 /*------------------------------------ tabs -------------------------------*/
 
-.tabs {
-    position: fixed;
-    left: 30px;
-    top: 60px;
-    bottom: 100px;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
+.tabs__wrapper{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .tabs.active {
@@ -54,20 +49,35 @@
     border-radius: 6px;
 }
 
-/*------------------------------------ grid system -------------------------------*/
+/*------------------------------------ card -------------------------------*/
 
 .card {
+    transition: 0.3s;
+    position:absolute;
+    border-radius: 5px;
+    border: 1px solid silver;
+}
+
+.card:hover {
+    box-shadow: -1px 1px 5px 3px rgba(0,0,0,.2);
+}
+
+.description{
+    display: none;
+}
+
+.card:hover .description{
+    display: block;
+}
+
+.upper-content {
+    border-radius: 5px 5px 0 0;
     position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+}
+
+.card-text {
+    padding: 2px 16px;
+    text-align: center;
 }
 
 /*------------------------------------ grid system -------------------------------*/
