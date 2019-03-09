@@ -4,6 +4,7 @@ window.addEventListener('load', function() {
 
 function init() {
   attachEventListner()
+  attachEventListnerOnLoad()
 }
 
 function attachEventListner() {
@@ -13,37 +14,49 @@ function attachEventListner() {
     if (targetEle) {
       switch (eventType) {
         case 'modal':
-          modalHandler(targetEle)
+          modalToastHandler(targetEle)
           break;
         case 'tabs':
           tabsHandler(targetEle, evt)
           break;
         case 'select':
-          modalHandler(targetEle)
+          modalToastHandler(targetEle)
           break;
         case 'select-option':
           selectOptionHandler(targetEle, evt)
+          break;
+        case 'toast':
+          modalToastHandler(targetEle)
+          break;
+        case 'carousel':
+          let carouselArrow = evt.target.dataset.arrow
+          let carouselDot = evt.target.dataset.dot
+          carouselhandler(targetEle, carouselArrow, carouselDot)
+          break;
       }
     }
   })
 }
 
+var slideIndex = 0
+
 function tabsHandler(targetEle, evt) {
   removeAddActive(evt.target.parentElement)
-  evt.target.classList.add('active')
-  removeAddActive(evt.target.parentElement.nextElementSibling)
+  evt.target.classList.add('btn__blue')
+  removeAddActive(evt.target.parentElement.nextElementSibling, 'data')
   let ele = document.getElementById(targetEle)
   ele.classList.add('active')
 
 }
 
-function removeAddActive(parentEle) {
+function removeAddActive(parentEle, type) {
   for (var i = 0; i < parentEle.children.length; i++) {
-    parentEle.children[i].classList.remove('active')
+    type === 'data' ? parentEle.children[i].classList.remove('active') :
+    parentEle.children[i].classList.remove('btn__blue')
   }
 }
 
-function modalHandler(targetEle) {
+function modalToastHandler (targetEle) {
   let ele = document.getElementById(targetEle)
   ele.classList.contains('open') ? ele.classList.remove('open') : ele.classList.add('open')
 }
@@ -52,5 +65,44 @@ function selectOptionHandler(selectOptionHandler, evt) {
   let parentEle = evt.target.closest('.select__wrapper')
   parentEle.firstElementChild.innerHTML = evt.target.innerHTML
   modalHandler (selectOptionHandler)
+}
+
+function attachEventListnerOnLoad () {
+  var slides = document.getElementsByClassName("mySlides");
+  slides[0].style.display = "block";
+  let automaticSlide = document.getElementById('custom-carousel').dataset.automaticCarousel
+  if (automaticSlide === 'true') {
+    setInfiniteInterval()
+  }
+}
+
+function setInfiniteInterval () {
+  var ele = document.getElementById('custom-carousel')
+  var timeInterval = ele.dataset.interval
+  setTimeout(function () {
+    carouselhandler('custom-carousel', 'next')
+    setInfiniteInterval()
+  }, timeInterval);
+}
+
+function  carouselhandler (targetEle, carouselArrow, carouselDot) {
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (var i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (var i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  if (carouselArrow) {
+    carouselArrow === 'prev' ? --slideIndex : slideIndex ++
+    if (slideIndex >= slides.length) {slideIndex = 0}
+    if (slideIndex < 0) {slideIndex = slides.length-1}
+    slides[slideIndex].style.display = "block"; 
+    dots[slideIndex].className += " active";
+  } else if(carouselDot){
+    slides[parseInt(carouselDot)].style.display = "block";
+    dots[parseInt(carouselDot)].className += " active";
+  }
 }
 
