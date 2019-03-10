@@ -1,126 +1,126 @@
 <!--  Grid system:-
   it is an 12 column based grid system same as bootstrap.
   for using coloumn should have one parent element with class list gridlist
--->
-
+  -->
 <!DOCTYPE html>
 <html>
-<head>
-  <title>custom-modal-example</title>
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
-<style>
-  body {
+  <head>
+    <title>custom-modal-example</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <style>
+    body {
     background: #e6f2ff;
-  }
-  .container h3 {
+    }
+    .container h3 {
     color: #0095da;
-  }
-  .blue-color, .white-color {
+    }
+    .blue-color, .white-color {
     background: white;
     color: #0095da;
-  }
-  .blue-color {
+    }
+    .blue-color {
     background: #0095da;
     color: white;
-  }
-  .gridlist__elements {
+    }
+    .gridlist__elements {
     padding: 10px;
     font-size: 16px;
-  }
-</style>
-<body>
-  <div class="container">
-    <h3>col-md-6 col-md-6 example</h3>
-    <div class="gridlist">
-      <div class="gridlist__col_md_6 blue-color">
-        <div class="gridlist__elements">
-          This is col-md-6 coloumn
+    word-break: break-all;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h3>col-md-6 col-md-6 example</h3>
+      <div class="gridlist">
+        <div class="gridlist__col_md_6 blue-color">
+          <div class="gridlist__elements">
+            This is col-md-6 coloumn
+          </div>
+        </div>
+        <div class="gridlist__col_md_6 white-color">
+          <div class="gridlist__elements">
+            This is col-md-6 coloumn
+          </div>
         </div>
       </div>
-      <div class="gridlist__col_md_6 white-color">
-        <div class="gridlist__elements">
-          This is col-md-6 coloumn
+      <h3>col-md-10 col-md-2 example</h3>
+      <div class="gridlist">
+        <div class="gridlist__col_md_10 white-color">
+          <div class="gridlist__elements">
+            This is col-md-10 coloumn
+          </div>
+        </div>
+        <div class="gridlist__col_md_2 blue-color">
+          <div class="gridlist__elements">
+            This is col-md-2 coloumn
+          </div>
+        </div>
+      </div>
+      <h3>col-md-4 col-md-4 col-md-4 example</h3>
+      <div class="gridlist">
+        <div class="gridlist__col_md_4 blue-color">
+          <div class="gridlist__elements">
+            This is col-md-4 coloumn
+          </div>
+        </div>
+        <div class="gridlist__col_md_4 white-color">
+          <div class="gridlist__elements">
+            This is col-md-4 coloumn
+          </div>
+        </div>
+        <div class="gridlist__col_md_4 blue-color">
+          <div class="gridlist__elements">
+            This is col-md-4 coloumn
+          </div>
+        </div>
+      </div>
+      <h3>col-md-3 col-md-3 col-md-3 example</h3>
+      <div class="gridlist">
+        <div class="gridlist__col_md_3 white-color">
+          <div class="gridlist__elements">
+            This is col-md-3 coloumn
+          </div>
+        </div>
+        <div class="gridlist__col_md_3 blue-color">
+          <div class="gridlist__elements">
+            This is col-md-3 coloumn
+          </div>
+        </div>
+        <div class="gridlist__col_md_3 white-color">
+          <div class="gridlist__elements">
+            This is col-md-3 coloumn
+          </div>
+        </div>
+        <div class="gridlist__col_md_3 blue-color">
+          <div class="gridlist__elements">
+            This is col-md-3 coloumn
+          </div>
+        </div>
+      </div>
+      <h3>col-md-6 col-md-3 col-md-2 col-md-1 example</h3>
+      <div class="gridlist">
+        <div class="gridlist__col_md_6 blue-color">
+          <div class="gridlist__elements">
+            This is col-md-6 coloumn
+          </div>
+        </div>
+        <div class="gridlist__col_md_3 white-color">
+          <div class="gridlist__elements">
+            This is col-md-3 coloumn
+          </div>
+        </div>
+        <div class="gridlist__col_md_2 blue-color">
+          <div class="gridlist__elements">
+            This is col-md-2 coloumn
+          </div>
+        </div>
+        <div class="gridlist__col_md_1 white-color">
+          <div class="gridlist__elements">
+            This is col-md-1 coloumn
+          </div>
         </div>
       </div>
     </div>
-    <h3>col-md-10 col-md-2 example</h3>
-    <div class="gridlist">
-      <div class="gridlist__col_md_10 white-color">
-        <div class="gridlist__elements">
-          This is col-md-10 coloumn
-        </div>
-      </div>
-      <div class="gridlist__col_md_2 blue-color">
-        <div class="gridlist__elements">
-          This is col-md-2 coloumn
-        </div>
-      </div>
-    </div>
-    <h3>col-md-4 col-md-4 col-md-4 example</h3>
-    <div class="gridlist">
-      <div class="gridlist__col_md_4 blue-color">
-        <div class="gridlist__elements">
-          This is col-md-4 coloumn
-        </div>
-      </div>
-      <div class="gridlist__col_md_4 white-color">
-        <div class="gridlist__elements">
-          This is col-md-4 coloumn
-        </div>
-      </div>
-      <div class="gridlist__col_md_4 blue-color">
-        <div class="gridlist__elements">
-          This is col-md-4 coloumn
-        </div>
-      </div>
-    </div>
-    <h3>col-md-3 col-md-3 col-md-3 example</h3>
-    <div class="gridlist">
-      <div class="gridlist__col_md_3 white-color">
-        <div class="gridlist__elements">
-          This is col-md-3 coloumn
-        </div>
-      </div>
-      <div class="gridlist__col_md_3 blue-color">
-        <div class="gridlist__elements">
-          This is col-md-3 coloumn
-        </div>
-      </div>
-      <div class="gridlist__col_md_3 white-color">
-        <div class="gridlist__elements">
-          This is col-md-3 coloumn
-        </div>
-      </div>
-      <div class="gridlist__col_md_3 blue-color">
-        <div class="gridlist__elements">
-          This is col-md-3 coloumn
-        </div>
-      </div>
-    </div>
-        <h3>col-md-6 col-md-3 col-md-2 col-md-1 example</h3>
-    <div class="gridlist">
-      <div class="gridlist__col_md_6 blue-color">
-        <div class="gridlist__elements">
-          This is col-md-6 coloumn
-        </div>
-      </div>
-      <div class="gridlist__col_md_3 white-color">
-        <div class="gridlist__elements">
-          This is col-md-3 coloumn
-        </div>
-      </div>
-      <div class="gridlist__col_md_2 blue-color">
-        <div class="gridlist__elements">
-          This is col-md-2 coloumn
-        </div>
-      </div>
-      <div class="gridlist__col_md_1 white-color">
-        <div class="gridlist__elements">
-          This is col-md-1 coloumn
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>

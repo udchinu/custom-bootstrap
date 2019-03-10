@@ -5,6 +5,7 @@ window.addEventListener('load', function() {
 function init() {
   attachEventListner()
   attachEventListnerOnLoad()
+  initStickyTab()
 }
 
 function attachEventListner() {
@@ -33,6 +34,18 @@ function attachEventListner() {
           let carouselDot = evt.target.dataset.dot
           carouselhandler(targetEle, carouselArrow, carouselDot)
           break;
+        case 'sticky-tab':
+          tabsHandler(targetEle, evt, true);
+          break;
+        case 'collapse':
+          collapseHandler(targetEle)
+          break;
+        case 'accordian':
+          accordianHandler(targetEle)
+          break;
+        case 'progress':
+          progressHandler(targetEle)
+          break;
       }
     }
   })
@@ -40,34 +53,59 @@ function attachEventListner() {
 
 var slideIndex = 0
 
-function tabsHandler(targetEle, evt) {
-    removeAddActive(evt.target.parentElement)
-    evt.target.classList.add('active')
-    removeAddActive(evt.target.parentElement.nextElementSibling)
-    let ele = document.getElementById(targetEle)
-    ele.classList.add('active')
-    ele.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+function initStickyTab() {
+  var stickyTab = document.getElementById('sticky-tab');
+  var sticky
+  var height
+  if (stickyTab) {
+    sticky = stickyTab.offsetTop
+    height = stickyTab.offsetHeight
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset >= sticky) {
+        stickyTab.classList.add('sticky__element');
+        stickyTab.style.marginBottom = height + 20 + 'px'
+      } else {
+        stickyTab.classList.remove('sticky__element');
+        stickyTab.style.marginBottom = '0px'
+      }
+    });
+  }
+}
+
+function tabsHandler(targetEle, evt, typeSticky) {
+  removeAddActive(evt.target.parentElement)
+  evt.target.classList.add('btn__blue')
+  removeAddActive(evt.target.parentElement.nextElementSibling, 'data')
+  let ele = document.getElementById(targetEle)
+  ele.classList.add('active')
+  if (typeSticky) {
+    let yAxis = ele.getBoundingClientRect().top + window.scrollY;
+    window.scroll({
+      top: yAxis - 88,
+      behavior: 'smooth'
+    })
+  }
 }
 
 function removeAddActive(parentEle, type) {
   for (var i = 0; i < parentEle.children.length; i++) {
     type === 'data' ? parentEle.children[i].classList.remove('active') :
-    parentEle.children[i].classList.remove('btn__blue')
+      parentEle.children[i].classList.remove('btn__blue')
   }
 }
 
-function modalToastHandler (targetEle) {
+function modalToastHandler(targetEle) {
   let ele = document.getElementById(targetEle)
   ele.classList.contains('open') ? ele.classList.remove('open') : ele.classList.add('open')
 }
 
-function selectOptionHandler(selectOptionHandler, evt) {
+function selectOptionHandler(targetEle, evt) {
   let parentEle = evt.target.closest('.select__wrapper')
   parentEle.firstElementChild.innerHTML = evt.target.innerHTML
-  modalHandler (selectOptionHandler)
+  modalToastHandler(targetEle)
 }
 
-function attachEventListnerOnLoad () {
+function attachEventListnerOnLoad() {
   var slides = document.getElementsByClassName("mySlides");
   if (!slides.length) return;
   slides[0].style.display = "block";
@@ -89,33 +127,84 @@ function attachEventListnerOnLoad () {
   }
 }
 
-function setInfiniteInterval () {
+function setInfiniteInterval() {
   var ele = document.getElementById('custom-carousel')
   var timeInterval = ele.dataset.interval
-  setTimeout(function () {
+  setTimeout(function() {
     carouselhandler('custom-carousel', 'next')
     setInfiniteInterval()
   }, timeInterval);
 }
 
-function  carouselhandler (targetEle, carouselArrow, carouselDot) {
+function carouselhandler(targetEle, carouselArrow, carouselDot) {
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
   for (var i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    slides[i].style.display = "none";
   }
   for (var i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" active", "");
   }
   if (carouselArrow) {
-    carouselArrow === 'prev' ? --slideIndex : slideIndex ++
-    if (slideIndex >= slides.length) {slideIndex = 0}
-    if (slideIndex < 0) {slideIndex = slides.length-1}
+    carouselArrow === 'prev' ? --slideIndex : slideIndex++
+    if (slideIndex >= slides.length) {
+      slideIndex = 0
+    }
+    if (slideIndex < 0) {
+      slideIndex = slides.length - 1
+    }
     slides[slideIndex].style.display = "block";
     dots[slideIndex].className += " active";
-  } else if(carouselDot){
+  } else if (carouselDot) {
     slides[parseInt(carouselDot)].style.display = "block";
     dots[parseInt(carouselDot)].className += " active";
   }
 }
 
+function collapseHandler(targetEle) {
+  let ele = document.getElementById(targetEle)
+  ele.classList.toggle('active');
+  var content = ele.nextElementSibling;
+  if (content.style.maxHeight) {
+    content.style.maxHeight = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+  }
+}
+
+function accordianHandler(targetEle) {
+  let ele = document.getElementById(targetEle)
+  let parentElement = ele.closest('.accordian')
+  let targetChildrenEle = parentElement.querySelectorAll('.accordian__wrapper > .accordian__wrapper_data')
+  let currentActiveEle
+  for (var i = 0; i < targetChildrenEle.length; i++) {
+    if (targetChildrenEle[i].classList.contains('open')) {
+      currentActiveEle = targetChildrenEle[i]
+    }
+  }
+  if (!currentActiveEle) {
+    ele.classList.add('open')
+  } else {
+    if (currentActiveEle.id !== ele.id) {
+      currentActiveEle.classList.remove('open')
+      ele.classList.add('open')
+    } else {
+      currentActiveEle.classList.remove('open')
+    }
+  }
+}
+
+function progressHandler(targetEle) {
+  let ele = document.getElementById(targetEle)
+  var width = 1;
+  var id = setInterval(frame, 10);
+
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      ele.style.width = width + '%';
+    }
+  }
+}

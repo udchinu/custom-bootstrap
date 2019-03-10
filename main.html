@@ -1,21 +1,274 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>main file</title>
-<style>
-  a {
+  <head>
+    <title>main file</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <style>
+    a {
     padding-right: 10px;
-  }
-</style>
-</head>
-<body>
-<a href="input-exp.html" target="_blank">animated-input-field</a>
-<a href="tabs-exp.html" target="_blank">tabs</a>
-<a href="gridsystem-exp.html" target="_blank">gridsystem</a>
-<a href="tooltip-exp.html" target="_blank">tooltips</a>
-<a href="custom-select-exp.html" target="_blank">custon-select</a>
-<a href="custom-modal-exp.html" target="_blank">custom-modal</a>
-<a href="custom-carousel-exp.html" target="_blank">custom-carousel</a>
-<a href="custom-toast-exp.html" target="_blank">custom-toast</a>
-</body>
+    text-decoration: none;
+    }
+    .gridlist__col_md_4 .card {
+    width:90%;
+    margin: 0 auto;
+    }
+    .gridlist {
+    margin-top:30px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="gridlist">
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>Sweet Alert with Success</b></h4>
+                <div class="description">
+                  <button class="btn btn__blue" onclick="openAlert('success')"> Show Alert</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>Sweet Alert with warning</b></h4>
+                <div class="description">
+                  <button class="btn btn__blue" onclick="openAlert('warning')"> Show Alert</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>Sweet Alert with error</b></h4>
+                <div class="description">
+                  <button class="btn btn__blue" onclick="openAlert('error')"> Show Alert</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gridlist">
+        <div class="gridlist__col_md_3">
+          <button class="tooltip bottom">Tooltip-Bottom
+          <span class="tooltip__text">
+          this tool tip will open on bottom of button
+          </span>
+          </button>
+        </div>
+        <div class="gridlist__col_md_3">
+          <button class="tooltip top">Tooltip-Top
+          <span class="tooltip__text">
+          this tool tip will open on top of button
+          </span>
+          </button>
+        </div>
+        <div class="gridlist__col_md_3">
+          <button class="tooltip left">Tooltip-Left
+          <span class="tooltip__text">
+          this tool tip will open on left side of button
+          </span>
+          </button>
+        </div>
+        <div class="gridlist__col_md_3">
+          <button class="tooltip right">Tooltip-Right
+          <span class="tooltip__text">
+          this tool tip will open on right side of button
+          </span>
+          </button>
+        </div>
+      </div>
+      <div class="gridlist">
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>Custom Select Example</b></h4>
+                <div class="description">
+                  <a class="btn btn__blue" href="custom-select-exp.html">Open Select</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>Custom Modal Example</b></h4>
+                <div class="description">
+                  <a class="btn btn__blue" href="custom-modal-exp.html">Open Modal</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>Custom Toast Example</b></h4>
+                <div class="description">
+                  <a class="btn btn__blue" href="custom-toast-exp.html">Open Toast</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gridlist">
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>GridSystem Select Example</b></h4>
+                <div class="description">
+                  <a class="btn btn__blue" href="gridsystem-exp.html">Open Select</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>Custom Tabs Example</b></h4>
+                <div class="description">
+                  <a class="btn btn__blue" href="tabs-exp.html">Open Tabs</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>Animated Input Fields Example</b></h4>
+                <div class="description">
+                  <a class="btn btn__blue" href="input-exp.html">Open Form</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gridlist">
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>carousel Example</b></h4>
+                <div class="description">
+                  <a class="btn btn__blue" href="custom-carousel-exp.html">Open Select</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>Sticky Tabs Example</b></h4>
+                <div class="description">
+                  <a class="btn btn__blue" href="sticky-tabs-exp.html">Open Sticky Tab</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>Alerts Example</b></h4>
+                <div class="description">
+                  <a class="btn btn__blue" href="custom-alert-exp.html">Open ALerts</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gridlist">
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>Progress Bar Example</b></h4>
+                <div class="description">
+                  <a class="btn btn__blue" href="progressbar-exp.html">Open Progress-Bar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>accordian Example</b></h4>
+                <div class="description">
+                  <a class="btn btn__blue" href="accordian-exp.html">Open Accordian</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gridlist__col_md_4">
+          <div class="card">
+            <div class="card__wrapper">
+              <img src="card-img.png" alt="image" class="upper-content slide-fwd-center">
+              <div class="card-text">
+                <h4><b>collapse Example</b></h4>
+                <div class="description">
+                  <a class="btn btn__blue" href="collapse-exp.html">Open collapse</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="js/sweet-alert.js"></script>
+  <script type="text/javascript">
+    var alertObj = {
+      'type': 'error',
+      'heading': 'heading',
+      'text': 'This Is Sweet Alert Text Message That What You Want To Convey To Your Customer',
+      'cancelBtnText':'Cancel','confirmBtnText': 'Submit'
+    }
+    
+    function openAlert (alertType) {
+      alertObj.type = alertType;
+      sweetAlert(alertObj);
+    }
+    
+  </script>
 </html>

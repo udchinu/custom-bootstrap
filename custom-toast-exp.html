@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="css/main.css">
-  <script type="text/javascript" src="js/main.js"></script>
-  <title>Toater example</title>
-  <style>
-</style>
-</head>
-<body>
-  <div class="button__wrapper">
-    <button 
-      class="btn btn__blue"
-      data-target="toast"
-      data-href="custom-toast">open Toast</button>
-  </div>
-  <div id="custom-toast" class="toast">
-    <div class="toast_header gridlist">
-      <div class="gridlist__col_md_1">
-        <img class="toast-img" src="blibli-icon.jpg"/>
-      </div>
+  <head>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/main.js"></script>
+    <title>Toater example</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="button__wrapper">
+      <button 
+        class="btn btn__blue"
+        data-target="toast"
+        data-href="custom-toast">open Toast</button>
+    </div>
+    <div id="custom-toast" class="toast">
+      <div class="toast_header gridlist">
+        <div class="gridlist__col_md_1">
+          <img class="toast-img" src="blibli-icon.jpg"/>
+        </div>
         <div class="gridlist__col_md_10">
           <div class="toast-header-text ">Custom Toast</div>
         </div>
@@ -28,10 +27,10 @@
             data-target="toast"
             data-href="custom-toast">X</div>
         </div>
+      </div>
+      <div class="toast_content">
+        this is toast content
+      </div>
     </div>
-    <div class="toast_content">
-      this is toast content
-    </div>
-  </div>
-</body>
+  </body>
 </html>

@@ -1,0 +1,35 @@
+<!-- has header for the accordian and data-target should be accordian -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>custom-modal-example</title>
+    <link rel="stylesheet" type="text/css" href="../custom-bootstrap/css/main.css">
+  </head>
+  <body>
+    <div class="accordian">
+      <div class="accordian__wrapper">
+        <h2 class="accordian__wrapper_heading accordionItemHeading"
+          data-target="accordian"
+          data-href="accordian1">
+          About accordions
+        </h2>
+        <div class="accordian__wrapper_data" id="accordian1">
+          <p>JavaScript accordions let you squeeze a lot of content into a small space in a Web page.</p>
+          <p>This simple accordion degrades gracefully in browsers that don't support JavaScript or CSS.</p>
+        </div>
+      </div>
+      <div class="accordian__wrapper">
+        <h2 class="accordian__wrapper_heading accordionItemHeading"
+          data-target="accordian"
+          data-href="accordian2">
+          About accordions
+        </h2>
+        <div class="accordian__wrapper_data" id="accordian2">
+          <p>JavaScript accordions let you squeeze a lot of content into a small space in a Web page.</p>
+          <p>This simple accordion degrades gracefully in browsers that don't support JavaScript or CSS.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/main.js"></script>
+</html>

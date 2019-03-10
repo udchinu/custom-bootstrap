@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sticky tabs</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <style>
+    .sticky__tabs {
+    margin-top: 50px;
+    }
+    .sticky__tabs_container {
+    width: 100%;
+    height: 500px;
+    }
+    .sticky__tabs_container:first-child {
+    background: green;
+    color: white;
+    }
+    .sticky__tabs_container:nth-child(2) {
+    background: red;
+    color: white;
+    }
+    .sticky__tabs_container:nth-child(3) {
+    background: yellow;
+    color: green;
+    }
+    .sticky__tabs_container:nth-child(4) {
+    background: pink;
+    color: black;
+    }
+    .sticky__tabs_container:nth-child(5) {
+    background: blue;
+    color: white;
+    }
+    .sticky__tabs_btns {
+    width: calc(100% - 30px);
+    padding: 15px;
+    background: cyan;
+    }
+    .sticky__tabs_btns.sticky__element {
+    position: fixed;
+    top: 0;
+    width: 1150px;
+    background: cyan;
+    z-index: 1000;
+    box-shadow: 0 5px 5px -5px #333;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="sticky__tabs">
+        <div class="sticky__tabs_btns" id="sticky-tab">
+          <button class="btn btn__blue" data-target="sticky-tab" data-href="sticky-tab-1">Tab-1</button>
+          <button class="btn" data-target="sticky-tab" data-href="sticky-tab-2">Tab-2</button>
+          <button class="btn" data-target="sticky-tab" data-href="sticky-tab-3">Tab-3</button>
+          <button class="btn" data-target="sticky-tab" data-href="sticky-tab-4">Tab-4</button>
+          <button class="btn" data-target="sticky-tab" data-href="sticky-tab-5">Tab-5</button>
+        </div>
+        <div class="sticky__tabs_data">
+          <div class="sticky__tabs_container" id="sticky-tab-1">
+            This is Tab 1
+          </div>
+          <div class="sticky__tabs_container" id="sticky-tab-2">
+            This is Tab 2
+          </div>
+          <div class="sticky__tabs_container" id="sticky-tab-3">
+            This is Tab 3
+          </div>
+          <div class="sticky__tabs_container" id="sticky-tab-4">
+            This is Tab 4
+          </div>
+          <div class="sticky__tabs_container" id="sticky-tab-5">
+            This is Tab 5
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

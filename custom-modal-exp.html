@@ -1,57 +1,57 @@
-  <!-------- for using modal :-
-   buttons open and close data-target should be modal and data-href and modal id should be same
-   ex:- if button data-href="testModal" then <div class="modal"> element should have ID id="testModal"
-   --->
+<!-------- for using modal :-
+  buttons open and close data-target should be modal and data-href and modal id should be same
+  ex:- if button data-href="testModal" then <div class="modal"> element should have ID id="testModal"
+  --->
 <!DOCTYPE html>
 <html>
-<head>
-  <title>custom-modal-example</title>
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
-<style>
-  h3 {
+  <head>
+    <title>custom-modal-example</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <style>
+    h3 {
     margin: 0px;
-  }
-  button {
+    }
+    button {
     padding: 10px;
     color: white;
     background: #0095da;
     font-size: 16px;
     outline: none;
-  }
-</style>
-<body>
-  <div class="button__wrapper">
-    <button 
-      data-target="modal"
-      data-href="custom-modal">open modal
-    </button>
-  </div>
-  <div class="modal"
-    id="custom-modal">
-    <div class="modal__continer">
-      <div class="modal__container_section">
-        <div class="modal__container_section_heading">
-          <div class="gridlist align__middle">
-            <div class="gridlist__col_md_11">
-              <h3>write your heading here</h3>
-            </div>
-            <div class="gridlist__col_md_1 animated__close">
-              <span class="close__model"
-                data-target="modal"
-                data-href="custom-modal">X</span>
+    }
+  </style>
+  <body>
+    <div class="button__wrapper">
+      <button 
+        data-target="modal"
+        data-href="custom-modal">open modal
+      </button>
+    </div>
+    <div class="modal"
+      id="custom-modal">
+      <div class="modal__continer">
+        <div class="modal__container_section">
+          <div class="modal__container_section_heading">
+            <div class="gridlist align__middle">
+              <div class="gridlist__col_md_11">
+                <h3>write your heading here</h3>
+              </div>
+              <div class="gridlist__col_md_1 animated__close">
+                <span class="close__model"
+                  data-target="modal"
+                  data-href="custom-modal">X</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="modal__container_section_body">
-          <h3>write your body here</h3>
-        </div>
-        <div class="modal__container_section_footer">
-          <h3>write your footer here</h3>
+          <div class="modal__container_section_body">
+            <h3>write your body here</h3>
+          </div>
+          <div class="modal__container_section_footer">
+            <h3>write your footer here</h3>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
-<script type="text/javascript" src="js/main.js"></script>
+  </body>
+  <script type="text/javascript" src="js/main.js"></script>
 </html>
